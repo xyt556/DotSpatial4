@@ -1,6 +1,6 @@
 ﻿namespace DotSpatial4
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -32,10 +32,10 @@
             文件ToolStripMenuItem = new ToolStripMenuItem();
             新建ToolStripMenuItem = new ToolStripMenuItem();
             spatialToolStrip = new DotSpatial.Controls.SpatialToolStrip();
+            map = new DotSpatial.Controls.Map();
+            legend = new DotSpatial.Controls.Legend();
             spatialStatusStrip = new DotSpatial.Controls.SpatialStatusStrip();
             spatialDockManager1 = new DotSpatial.Controls.SpatialDockManager();
-            legend = new DotSpatial.Controls.Legend();
-            map = new DotSpatial.Controls.Map();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)spatialDockManager1).BeginInit();
             spatialDockManager1.Panel1.SuspendLayout();
@@ -75,6 +75,50 @@
             spatialToolStrip.TabIndex = 1;
             spatialToolStrip.Text = "spatialToolStrip1";
             // 
+            // map
+            // 
+            map.AllowDrop = true;
+            map.BackColor = Color.White;
+            map.CollisionDetection = false;
+            map.Dock = DockStyle.Fill;
+            map.ExtendBuffer = false;
+            map.FunctionMode = DotSpatial.Controls.FunctionMode.None;
+            map.IsBusy = false;
+            map.IsZoomedToMaxExtent = false;
+            map.Legend = legend;
+            map.Location = new Point(0, 0);
+            map.Name = "map";
+            map.ProgressHandler = null;
+            map.ProjectionModeDefine = DotSpatial.Controls.ActionMode.Prompt;
+            map.ProjectionModeReproject = DotSpatial.Controls.ActionMode.Prompt;
+            map.RedrawLayersWhileResizing = false;
+            map.SelectionEnabled = true;
+            map.Size = new Size(530, 378);
+            map.TabIndex = 0;
+            map.ZoomOutFartherThanMaxExtent = false;
+            // 
+            // legend
+            // 
+            legend.BackColor = Color.White;
+            legend.ControlRectangle = new Rectangle(0, 0, 266, 378);
+            legend.Dock = DockStyle.Fill;
+            legend.DocumentRectangle = new Rectangle(0, 0, 187, 428);
+            legend.HorizontalScrollEnabled = true;
+            legend.Indentation = 30;
+            legend.IsInitialized = false;
+            legend.Location = new Point(0, 0);
+            legend.MinimumSize = new Size(5, 5);
+            legend.Name = "legend";
+            legend.ProgressHandler = null;
+            legend.ResetOnResize = false;
+            legend.SelectionFontColor = Color.Black;
+            legend.SelectionHighlight = Color.FromArgb(215, 238, 252);
+            legend.Size = new Size(266, 378);
+            legend.TabIndex = 0;
+            legend.Text = "legend1";
+            legend.UseLegendForSelection = true;
+            legend.VerticalScrollEnabled = true;
+            // 
             // spatialStatusStrip
             // 
             spatialStatusStrip.Location = new Point(0, 428);
@@ -104,51 +148,7 @@
             spatialDockManager1.TabControl2 = null;
             spatialDockManager1.TabIndex = 3;
             // 
-            // legend
-            // 
-            legend.BackColor = Color.White;
-            legend.ControlRectangle = new Rectangle(0, 0, 266, 378);
-            legend.Dock = DockStyle.Fill;
-            legend.DocumentRectangle = new Rectangle(0, 0, 187, 428);
-            legend.HorizontalScrollEnabled = true;
-            legend.Indentation = 30;
-            legend.IsInitialized = false;
-            legend.Location = new Point(0, 0);
-            legend.MinimumSize = new Size(5, 5);
-            legend.Name = "legend";
-            legend.ProgressHandler = null;
-            legend.ResetOnResize = false;
-            legend.SelectionFontColor = Color.Black;
-            legend.SelectionHighlight = Color.FromArgb(215, 238, 252);
-            legend.Size = new Size(266, 378);
-            legend.TabIndex = 0;
-            legend.Text = "legend1";
-            legend.UseLegendForSelection = true;
-            legend.VerticalScrollEnabled = true;
-            // 
-            // map
-            // 
-            map.AllowDrop = true;
-            map.BackColor = Color.White;
-            map.CollisionDetection = false;
-            map.Dock = DockStyle.Fill;
-            map.ExtendBuffer = false;
-            map.FunctionMode = DotSpatial.Controls.FunctionMode.None;
-            map.IsBusy = false;
-            map.IsZoomedToMaxExtent = false;
-            map.Legend = legend;
-            map.Location = new Point(0, 0);
-            map.Name = "map";
-            map.ProgressHandler = null;
-            map.ProjectionModeDefine = DotSpatial.Controls.ActionMode.Prompt;
-            map.ProjectionModeReproject = DotSpatial.Controls.ActionMode.Prompt;
-            map.RedrawLayersWhileResizing = false;
-            map.SelectionEnabled = true;
-            map.Size = new Size(530, 378);
-            map.TabIndex = 0;
-            map.ZoomOutFartherThanMaxExtent = false;
-            // 
-            // Form1
+            // mainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -158,7 +158,7 @@
             Controls.Add(spatialToolStrip);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "mainForm";
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
