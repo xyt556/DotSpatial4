@@ -31,14 +31,16 @@
             menuStrip1 = new MenuStrip();
             文件ToolStripMenuItem = new ToolStripMenuItem();
             新建ToolStripMenuItem = new ToolStripMenuItem();
+            帮助ToolStripMenuItem = new ToolStripMenuItem();
+            关于ToolStripMenuItem = new ToolStripMenuItem();
             spatialToolStrip = new DotSpatial.Controls.SpatialToolStrip();
             map = new DotSpatial.Controls.Map();
             legend = new DotSpatial.Controls.Legend();
             spatialStatusStrip = new DotSpatial.Controls.SpatialStatusStrip();
+            toolStripStatusLabelzuozhe = new ToolStripStatusLabel();
             spatialDockManager1 = new DotSpatial.Controls.SpatialDockManager();
-            帮助ToolStripMenuItem = new ToolStripMenuItem();
-            关于ToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
+            spatialStatusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)spatialDockManager1).BeginInit();
             spatialDockManager1.Panel1.SuspendLayout();
             spatialDockManager1.Panel2.SuspendLayout();
@@ -66,6 +68,20 @@
             新建ToolStripMenuItem.Name = "新建ToolStripMenuItem";
             新建ToolStripMenuItem.Size = new Size(100, 22);
             新建ToolStripMenuItem.Text = "新建";
+            // 
+            // 帮助ToolStripMenuItem
+            // 
+            帮助ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 关于ToolStripMenuItem });
+            帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            帮助ToolStripMenuItem.Size = new Size(44, 21);
+            帮助ToolStripMenuItem.Text = "帮助";
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            关于ToolStripMenuItem.Size = new Size(100, 22);
+            关于ToolStripMenuItem.Text = "关于";
+            关于ToolStripMenuItem.Click += 关于ToolStripMenuItem_Click;
             // 
             // spatialToolStrip
             // 
@@ -123,13 +139,23 @@
             // 
             // spatialStatusStrip
             // 
+            spatialStatusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabelzuozhe });
             spatialStatusStrip.Location = new Point(0, 428);
             spatialStatusStrip.Name = "spatialStatusStrip";
             spatialStatusStrip.ProgressBar = null;
-            spatialStatusStrip.ProgressLabel = null;
+            spatialStatusStrip.ProgressLabel = toolStripStatusLabelzuozhe;
             spatialStatusStrip.Size = new Size(800, 22);
             spatialStatusStrip.TabIndex = 2;
             spatialStatusStrip.Text = "spatialStatusStrip1";
+            // 
+            // toolStripStatusLabelzuozhe
+            // 
+            toolStripStatusLabelzuozhe.IsLink = true;
+            toolStripStatusLabelzuozhe.LinkColor = Color.Blue;
+            toolStripStatusLabelzuozhe.LinkVisited = true;
+            toolStripStatusLabelzuozhe.Name = "toolStripStatusLabelzuozhe";
+            toolStripStatusLabelzuozhe.Size = new Size(80, 17);
+            toolStripStatusLabelzuozhe.Text = "作者：奚砚涛";
             // 
             // spatialDockManager1
             // 
@@ -150,20 +176,6 @@
             spatialDockManager1.TabControl2 = null;
             spatialDockManager1.TabIndex = 3;
             // 
-            // 帮助ToolStripMenuItem
-            // 
-            帮助ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 关于ToolStripMenuItem });
-            帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            帮助ToolStripMenuItem.Size = new Size(44, 21);
-            帮助ToolStripMenuItem.Text = "帮助";
-            // 
-            // 关于ToolStripMenuItem
-            // 
-            关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            关于ToolStripMenuItem.Size = new Size(180, 22);
-            关于ToolStripMenuItem.Text = "关于";
-            关于ToolStripMenuItem.Click += 关于ToolStripMenuItem_Click;
-            // 
             // mainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -175,9 +187,12 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "mainForm";
-            Text = "Form1";
+            Text = "GIS平台";
+            Load += mainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            spatialStatusStrip.ResumeLayout(false);
+            spatialStatusStrip.PerformLayout();
             spatialDockManager1.Panel1.ResumeLayout(false);
             spatialDockManager1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)spatialDockManager1).EndInit();
@@ -198,5 +213,6 @@
         private DotSpatial.Controls.SpatialDockManager spatialDockManager1;
         private ToolStripMenuItem 帮助ToolStripMenuItem;
         private ToolStripMenuItem 关于ToolStripMenuItem;
+        private ToolStripStatusLabel toolStripStatusLabelzuozhe;
     }
 }

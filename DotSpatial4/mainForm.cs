@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace DotSpatial4
 {
     public partial class mainForm : Form
@@ -12,5 +14,11 @@ namespace DotSpatial4
             AboutBox myaboutbox = new AboutBox();
             myaboutbox.ShowDialog();
         }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
