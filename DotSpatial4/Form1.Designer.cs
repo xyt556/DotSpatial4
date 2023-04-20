@@ -36,6 +36,8 @@
             legend = new DotSpatial.Controls.Legend();
             spatialStatusStrip = new DotSpatial.Controls.SpatialStatusStrip();
             spatialDockManager1 = new DotSpatial.Controls.SpatialDockManager();
+            帮助ToolStripMenuItem = new ToolStripMenuItem();
+            关于ToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)spatialDockManager1).BeginInit();
             spatialDockManager1.Panel1.SuspendLayout();
@@ -45,7 +47,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { 文件ToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { 文件ToolStripMenuItem, 帮助ToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 25);
@@ -148,6 +150,20 @@
             spatialDockManager1.TabControl2 = null;
             spatialDockManager1.TabIndex = 3;
             // 
+            // 帮助ToolStripMenuItem
+            // 
+            帮助ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 关于ToolStripMenuItem });
+            帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            帮助ToolStripMenuItem.Size = new Size(44, 21);
+            帮助ToolStripMenuItem.Text = "帮助";
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            关于ToolStripMenuItem.Size = new Size(180, 22);
+            关于ToolStripMenuItem.Text = "关于";
+            关于ToolStripMenuItem.Click += 关于ToolStripMenuItem_Click;
+            // 
             // mainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -180,5 +196,7 @@
         private DotSpatial.Controls.Legend legend;
         private DotSpatial.Controls.SpatialStatusStrip spatialStatusStrip;
         private DotSpatial.Controls.SpatialDockManager spatialDockManager1;
+        private ToolStripMenuItem 帮助ToolStripMenuItem;
+        private ToolStripMenuItem 关于ToolStripMenuItem;
     }
 }

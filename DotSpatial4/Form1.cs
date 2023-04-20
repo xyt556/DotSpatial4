@@ -6,5 +6,11 @@ namespace DotSpatial4
         {
             InitializeComponent();
         }
+
+        private void ¹ØÓÚToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox myaboutbox = new AboutBox();
+            myaboutbox.ShowDialog();
+        }
     }
 }
